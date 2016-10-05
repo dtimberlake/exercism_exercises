@@ -1,5 +1,7 @@
 # Raindrops
 
+Submitted Link: [http://exercism.io/submissions/f5bca6dc5e894f01b0f46cd3ce44f34d](http://exercism.io/submissions/f5bca6dc5e894f01b0f46cd3ce44f34d)
+
 Write a program that converts a number to a string, the contents of which depends on the number's factors.
 
 - If the number contains 3 as a factor, output 'Pling'.
@@ -61,4 +63,3 @@ A variation on a famous interview question intended to weed out potential candid
 
 ## Submitting Incomplete Problems
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
