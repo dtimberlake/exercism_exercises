@@ -1,5 +1,7 @@
 # Sum Of Multiples
 
+Submitted Link: [http://exercism.io/submissions/9aae660be00744faaa0e609d676f213b](http://exercism.io/submissions/9aae660be00744faaa0e609d676f213b)
+
 Write a program that, given a number, can find the sum of all the multiples of particular numbers up to but not including that number.
 
 If we list all the natural numbers up to but not including 20 that are
@@ -53,4 +55,3 @@ A variation on Problem 1 at Project Euler [http://projecteuler.net/problem=1](ht
 
 ## Submitting Incomplete Problems
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
