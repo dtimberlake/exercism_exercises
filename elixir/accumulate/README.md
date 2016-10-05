@@ -1,5 +1,7 @@
 # Accumulate
 
+Submission Link: (http://exercism.io/submissions/d92757d00d7647fa86ea0131613d0a9e)[http://exercism.io/submissions/d92757d00d7647fa86ea0131613d0a9e]
+
 Implement the `accumulate` operation, which, given a collection and an operation to perform on each element of the collection, returns a new collection containing the result of applying that operation to each element of the input collection.
 
 Given the collection of numbers:
@@ -68,4 +70,3 @@ Conversation with James Edward Gray II [https://twitter.com/jeg2](https://twitte
 
 ## Submitting Incomplete Problems
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
