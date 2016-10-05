@@ -1,5 +1,7 @@
 # Nucleotide Count
 
+Submission link: [http://exercism.io/submissions/e4346f52b50b41fab793b42f4cbaba86](http://exercism.io/submissions/e4346f52b50b41fab793b42f4cbaba86)
+
 Given a DNA string, compute how many times each nucleotide occurs in the string.
 
 DNA is represented by an alphabet of the following symbols: 'A', 'C',
@@ -69,4 +71,3 @@ The Calculating DNA Nucleotides_problem at Rosalind [http://rosalind.info/proble
 
 ## Submitting Incomplete Problems
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
