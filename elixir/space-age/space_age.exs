@@ -25,6 +25,6 @@ defmodule SpaceAge do
     seconds / seconds_per_orbit relative_orbit_time
   end
 
-  @spec seconds_per_orbit(integer) :: float
+  @spec seconds_per_orbit(float) :: float
   def seconds_per_orbit(relative_orbit_time), do: @earth_seconds_per_orbit * relative_orbit_time
 end
