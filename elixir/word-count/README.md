@@ -1,5 +1,7 @@
 # Word Count
 
+Submission Link: (http://exercism.io/submissions/b54852fb482f4ef0b2eb4e1a136124a0)[http://exercism.io/submissions/b54852fb482f4ef0b2eb4e1a136124a0]
+
 Write a program that given a phrase can count the occurrences of each word in that phrase.
 
 For example for the input `"olly olly in come free"`
@@ -55,4 +57,3 @@ This is a classic toy problem, but we were reminded of it by seeing it in the Go
 
 ## Submitting Incomplete Problems
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
