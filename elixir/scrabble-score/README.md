@@ -1,5 +1,7 @@
 # Scrabble Score
 
+Submitted Link: [http://exercism.io/submissions/ca539035bf3541f9b5ddbfdebad55651](http://exercism.io/submissions/ca539035bf3541f9b5ddbfdebad55651)
+
 Write a program that, given a word, computes the scrabble score for that word.
 
 ## Letter Values
@@ -80,4 +82,3 @@ Inspired by the Extreme Startup game [https://github.com/rchatley/extreme_startu
 
 ## Submitting Incomplete Problems
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
