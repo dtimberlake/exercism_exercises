@@ -1,5 +1,7 @@
 # Bob
 
+Submission Link: [http://exercism.io/submissions/60bbdffca231433a92f54c9b89391600](http://exercism.io/submissions/60bbdffca231433a92f54c9b89391600)
+
 Bob is a lackadaisical teenager. In conversation, his responses are very limited.
 
 Bob answers 'Sure.' if you ask him a question.
@@ -54,4 +56,3 @@ Inspired by the 'Deaf Grandma' exercise in Chris Pine's Learn to Program tutoria
 
 ## Submitting Incomplete Problems
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
