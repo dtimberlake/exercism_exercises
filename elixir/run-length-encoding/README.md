@@ -1,5 +1,7 @@
 # Run Length Encoding
 
+Submitted Link: [http://exercism.io/submissions/9dc64ab430914f4c92f6bd81166f604b](http://exercism.io/submissions/9dc64ab430914f4c92f6bd81166f604b)
+
 Implement run-length encoding and decoding.
 
 Run-length encoding (RLE) is a simple form of data compression, where runs
@@ -61,4 +63,3 @@ Wikipedia [https://en.wikipedia.org/wiki/Run-length_encoding](https://en.wikiped
 
 ## Submitting Incomplete Problems
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
