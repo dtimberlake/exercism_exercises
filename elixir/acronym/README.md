@@ -1,5 +1,7 @@
 # Acronym
 
+Submission Link: [http://exercism.io/submissions/5691eeb51f5945e6a2eaec08f03f98b1](http://exercism.io/submissions/5691eeb51f5945e6a2eaec08f03f98b1)
+
 Convert a long phrase to its acronym
 
 Techies love their TLA (Three Letter Acronyms)!
@@ -51,4 +53,3 @@ Julien Vanier [https://github.com/monkbroc](https://github.com/monkbroc)
 
 ## Submitting Incomplete Problems
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
