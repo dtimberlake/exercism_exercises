@@ -1,5 +1,7 @@
 # Bracket Push
 
+Submission Link: [http://exercism.io/submissions/2a8e3e2ebd944c0f984b7825d482a3e2](http://exercism.io/submissions/2a8e3e2ebd944c0f984b7825d482a3e2)
+
 Make sure the brackets and braces all match.
 
 Ensure that all the brackets and braces are matched correctly,
@@ -48,4 +50,3 @@ Ginna Baker
 
 ## Submitting Incomplete Problems
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
