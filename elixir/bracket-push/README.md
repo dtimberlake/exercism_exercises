@@ -1,6 +1,6 @@
 # Bracket Push
 
-Submission Link: [http://exercism.io/submissions/2a8e3e2ebd944c0f984b7825d482a3e2](http://exercism.io/submissions/2a8e3e2ebd944c0f984b7825d482a3e2)
+Submission Link: [http://exercism.io/submissions/bb256cd3ba9f4bd1bafcb25975f843fd](http://exercism.io/submissions/bb256cd3ba9f4bd1bafcb25975f843fd)
 
 Make sure the brackets and braces all match.
 
