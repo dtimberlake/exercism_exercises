@@ -1,5 +1,7 @@
 # Phone Number
 
+Submission Link: [http://exercism.io/submissions/321d430ed24f42028b899a4aa3802483](http://exercism.io/submissions/321d430ed24f42028b899a4aa3802483)
+
 Write a program that cleans up user-entered phone numbers so that they can be sent SMS messages.
 
 The rules are as follows:
@@ -62,4 +64,3 @@ Event Manager by JumpstartLab [http://tutorials.jumpstartlab.com/projects/eventm
 
 ## Submitting Incomplete Problems
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

@@ -1,4 +1,5 @@
 defmodule Phone do
+  import String, only: [slice: 2]
   @doc """
   Remove formatting from a phone number.
 
@@ -18,6 +19,14 @@ defmodule Phone do
   """
   @spec number(String.t) :: String.t
   def number(raw) do
+    str = raw |> String.replace(~r/[^0-9a-zA-Z]/, "")
+    do_number(str, String.length(str))
+  end
+
+  defp do_number(_, len) when len < 10 or len > 11, do: "0000000000"
+  defp do_number(str, 10), do: str
+  defp do_number(str, 11) do
+    if (Regex.match?(~r/^[1].*/, str)), do: slice(str, 1..-1), else: "0000000000"
   end
 
   @doc """
@@ -39,6 +48,7 @@ defmodule Phone do
   """
   @spec area_code(String.t) :: String.t
   def area_code(raw) do
+    raw |> number |> slice(0..2)
   end
 
   @doc """
@@ -60,5 +70,7 @@ defmodule Phone do
   """
   @spec pretty(String.t) :: String.t
   def pretty(raw) do
+    str = raw |> number
+    "(#{slice(str, 0..2)}) #{slice(str, 3..5)}-#{slice(str, 6..9)}"
   end
 end
