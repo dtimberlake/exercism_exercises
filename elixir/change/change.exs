@@ -1,22 +1,24 @@
 defmodule Change do
-  @doc """
-    Determine the least number of coins to be given to the user such
-    that the sum of the coins' value would equal the correct amount of change.
-    It returns :error if it is not possible to compute the right amount of coins.
-    Otherwise returns the tuple {:ok, map_of_coins}
-
-    ## Examples
-
-      iex> Change.generate(3, [5, 10, 15])
-      :error
-
-      iex> Change.generate(18, [1, 5, 10])
-      {:ok, %{1 => 3, 5 => 1, 10 => 1}}
-
-  """
-
   @spec generate(integer, list) :: {:ok, map} | :error
   def generate(amount, values) do
+    values |> Enum.sort(&(&1 >= &2)) |> generate(amount, %{})
+  end
 
+  @spec generate(list, integer, map) :: {:ok, map} | :error
+  defp generate([], 0, change), do: { :ok, change }
+
+  defp generate([], _, _), do: :error
+
+  defp generate([h | tail], amount, change) when div(amount, h) == 0 do
+    generate(tail, amount, Map.put(change, h, 0))
+  end
+
+  defp generate([h | tail], amount, change) do
+    Enum.reduce_while(div(amount, h)..0, 0, fn (n, _) ->
+      case generate(tail, amount - (h * n), Map.put(change, h, n)) do
+        { :ok, change } -> { :halt, { :ok, change }}
+        :error -> { :cont, :error }
+      end
+    end)
   end
 end
