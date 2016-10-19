@@ -2,23 +2,17 @@ defmodule Luhn do
   @spec checksum(String.t()) :: integer
   def checksum(number) do
     number
+    |> String.reverse
     |> String.split("", trim: true)
     |> Enum.map(&String.to_integer(&1))
-    |> Enum.reverse
     |> Enum.with_index
-    |> Enum.reduce(0, fn ({n, i}, acc) ->
-      if rem(i, 2) == 0 do
-        acc + n
-      else
-        doubled = n * 2
-        if doubled > 9 do
-          acc + (doubled - 9)
-        else
-          acc + doubled
-        end
-      end
-    end)
+    |> Enum.map(&do_checksum(&1))
+    |> Enum.sum
   end
+
+  defp do_checksum({n, i}) when rem(i, 2) == 0, do: n
+  defp do_checksum({n, _}) when n > 5, do: (n * 2) - 9
+  defp do_checksum({n, _}), do: n * 2
 
   @spec valid?(String.t()) :: boolean
   def valid?(number) do
