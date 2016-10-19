@@ -1,23 +1,39 @@
 defmodule Luhn do
-  @doc """
-  Calculates the total checksum of a number
-  """
   @spec checksum(String.t()) :: integer
   def checksum(number) do
+    number
+    |> String.split("", trim: true)
+    |> Enum.map(&String.to_integer(&1))
+    |> Enum.reverse
+    |> Enum.with_index
+    |> Enum.reduce(0, fn ({n, i}, acc) ->
+      if rem(i, 2) == 0 do
+        acc + n
+      else
+        doubled = n * 2
+        if doubled > 9 do
+          acc + (doubled - 9)
+        else
+          acc + doubled
+        end
+      end
+    end)
   end
 
-  @doc """
-  Checks if the given number is valid via the luhn formula
-  """
   @spec valid?(String.t()) :: boolean
   def valid?(number) do
+    checksum_rem(number) == 0
   end
 
-  @doc """
-  Creates a valid number by adding the correct
-  checksum digit to the end of the number
-  """
   @spec create(String.t()) :: String.t()
   def create(number) do
+    case checksum_rem(number <> "0") do
+      0 -> number <> "0"
+      n ->   number <> Integer.to_string(10 - n)
+    end
+  end
+
+  defp checksum_rem(number) do
+    checksum(number) |> rem(10)
   end
 end
