@@ -1,8 +1,9 @@
 defmodule SumOfMultiples do
+
   @spec to(non_neg_integer, [non_neg_integer]) :: non_neg_integer
   def to(limit, factors) do
     factors
-    |> Stream.flat_map(&get_multiples(&1, limit))
+    |> Enum.flat_map(&get_multiples(&1, limit))
     |> Enum.uniq
     |> Enum.sum
   end
