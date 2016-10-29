@@ -3,8 +3,9 @@ defmodule Gigasecond do
   Calculate a date one billion seconds after an input date.
   """
   @spec from({{pos_integer, pos_integer, pos_integer}, {pos_integer, pos_integer, pos_integer}}) :: :calendar.datetime
-
-  def from({{year, month, day}, {hours, minutes, seconds}}) do
-
+  def from(birthdate) do
+    birth_seconds = :calendar.datetime_to_gregorian_seconds(birthdate)
+    birth_seconds + 1_000_000_000
+    |> :calendar.gregorian_seconds_to_datetime
   end
 end
