@@ -13,17 +13,23 @@ defmodule Markdown do
   @spec parse(String.t) :: String.t
   def parse(markdown) do
     markdown
-    |> String.split("\n")
-    |> Enum.map(&process(&1))
-    |> Enum.join
-    |> patch
+    |> handle_inline_markdown
+    |> handle_block_markdown
+    |> enclose_lists
   end
 
-  defp process(line) do
+  defp handle_block_markdown(markdown) do
+    markdown
+    |> String.split("\n")
+    |> Enum.map(&process_line(&1))
+    |> Enum.join
+  end
+
+  defp process_line(line) do
     cond do
       String.starts_with?(line, "#") -> handle_header(line)
       String.starts_with?(line, "*") -> handle_list_item(line)
-      :otherwise                     -> handle_paragraph(line)
+      :otherwise                     -> enclose_with_tag(line, "p")
     end
   end
 
@@ -36,40 +42,26 @@ defmodule Markdown do
   defp handle_list_item(line) do
     line
     |> String.trim_leading("* ")
-    |> handle_inner_markdown
     |> enclose_with_tag("li")
   end
 
-  defp handle_paragraph(line) do
-    line
-    |> handle_inner_markdown
-    |> enclose_with_tag("p")
-  end
-
-  defp handle_inner_markdown(content) do
+  defp handle_inline_markdown(content) do
     content
     |> replace_enclosing_md("__", "strong")
     |> replace_enclosing_md("_", "em")
   end
 
   defp replace_enclosing_md(content, md, tag) do
-    regex = "#{md}(.*)#{md}" |> Regex.compile!
-    case Regex.run(regex, content) do
-      [match, inner_match] -> replace_inner_match(content, match, inner_match, tag)
-      nil                  -> content
-    end
-  end
-
-  defp replace_inner_match(content, match, inner_match, tag) do
-    inner_content = inner_match |> enclose_with_tag(tag)
-    String.replace(content, match, inner_content)
+    content
+    |> String.replace(~r/#{md}\b/, "</#{tag}>")
+    |> String.replace(md, "<#{tag}>")
   end
 
   defp enclose_with_tag(content, tag) do
     "<#{tag}>#{content}</#{tag}>"
   end
 
-  defp patch(html) do
+  defp enclose_lists(html) do
     String.replace(html, "<li>", "<ul><li>", global: false)
     |> String.replace_suffix("</li>", "</li></ul>")
   end
